@@ -1,0 +1,18 @@
+$primary-color: #7f6924;
+$secondary-color: #544417;
+$accent-color: #e74c3c;
+$text-color: #f4e6cd;
+$background-color: #4c2e00;
+
+$font-family-base: 'Roboto', Arial, sans-serif;
+$font-size-base: 16px;
+$border-radius-base: 0.9rem;
+
+$golden-gradient: linear-gradient(
+  269deg,
+  rgba(84, 68, 23, 1) 0%,
+  rgba(127, 105, 36, 1) 20%,
+  rgba(255, 219, 110, 1) 50%,
+  rgba(127, 105, 36, 1) 80%,
+  rgba(84, 68, 23, 1) 100%
+);
