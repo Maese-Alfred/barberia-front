@@ -1,1 +1,26 @@
-<p>tabla works!</p>
+<table class="tabla">
+  <thead class="tabla__header">
+    <tr class="tabla__row">
+      @for (col of columnas; track $index) {
+        <th class="tabla__cell">{{ col | titlecase }}</th>
+      }
+    </tr>
+  </thead>
+  <tbody class="tabla__body">
+    @if (datos.length > 0) {
+      @for (fila of datos; track $index) {
+        <tr class="tabla__row">
+          @for (col of columnas; track $index) {
+            <td class="tabla__cell">{{ fila[col] }}</td>
+          }
+        </tr>
+      }
+    } @else {
+      <tr class="tabla__row">
+        <td [attr.colspan]="columnas.length" class="empty">
+          No hay registros
+        </td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,23 @@
+@use 'variables' as *;
+
+.estadisticas__container {
+    padding: 16px;
+    border-radius: $border-radius-base;
+    background-color: $background-color;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 1px solid $text-color;
+}
+
+.estadisticas__titulo {
+    font-family: $font-family-base;
+    font-size: 1.0rem;
+    color: $text-color;
+    margin-bottom: 8px;
+}
+
+.estadisticas__dinero {
+    font-family: $font-family-base;
+    font-size: 1.5rem;
+    color: $text-color;
+}

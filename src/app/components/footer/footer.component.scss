@@ -1,0 +1,44 @@
+@use 'variables' as *;
+
+footer {
+  background: $golden-gradient;
+  color: $text-color;
+  padding: 20px;
+  font-family: $font-family-base;
+  border-top: 1px solid $text-color;
+  border-radius: 0 0 $border-radius-base $border-radius-base ;
+}
+
+
+.footer__nav ul{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: space-evenly;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  list-style: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content li {
+  margin: 5px 0;
+}
+
+.material-symbols-outlined {
+  font-size: 20px;
+  vertical-align: middle;
+  margin-right: 6px;
+}

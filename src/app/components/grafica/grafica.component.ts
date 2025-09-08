@@ -1,26 +1,33 @@
 import { Component } from '@angular/core';
-import { NgChartsModule } from 'ng2-charts';
-import { ChartConfiguration, ChartOptions } from 'chart.js';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-grafica',
-  imports: [NgChartsModule],
+  standalone: true,
+  imports: [NgxChartsModule],   // 👈 aquí se importa como módulo normal
   templateUrl: './grafica.component.html',
-  styleUrl: './grafica.component.scss'
+  styleUrls: ['./grafica.component.scss']
 })
 export class GraficaComponent {
+  view: [number, number] = [700, 400];  // tamaño [ancho, alto]
 
-  // ejemplo de datos para la gráfica, luego se pueden obtener de un servicio
-   // Datos de ejemplo
-  public barChartData: ChartConfiguration<'bar'>['data'] = {
-    labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'],
-    datasets: [
-      { data: [65, 59, 80, 81, 56], label: 'Ventas' },
-      { data: [28, 48, 40, 19, 86], label: 'Gastos' }
-    ]
-  };
+  // Datos de ejemplo
+  data = [
+    { name: 'Enero', value: 65 },
+    { name: 'Febrero', value: 59 },
+    { name: 'Marzo', value: 80 },
+    { name: 'Abril', value: 81 },
+    { name: 'Mayo', value: 56 }
+  ];
 
-  public barChartOptions: ChartOptions<'bar'> = {
-    responsive: true,
-  };
+  // Opciones
+  showLegend = true;
+  showLabels = true;
+  animations = true;
+  xAxis = true;
+  yAxis = true;
+  showXAxisLabel = true;
+  showYAxisLabel = true;
+  xAxisLabel = 'Mes';
+  yAxisLabel = 'Ventas';
 }
