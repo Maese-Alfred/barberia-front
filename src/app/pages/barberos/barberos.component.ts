@@ -4,6 +4,7 @@ import { BotonAgregarComponent } from '../../components/boton-agregar/boton-agre
 import { ModalBarberosComponent } from '../../components/modal-barberos/modal-barberos.component';
 
 
+
 @Component({
   selector: 'app-barberos',
   imports: [TablaComponent, BotonAgregarComponent, ModalBarberosComponent],

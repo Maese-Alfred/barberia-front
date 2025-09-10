@@ -1,1 +1,25 @@
-<p>gestion-financiera works!</p>
+<h2>Resumen Diario</h2>
+<div class="estadisticas__container">
+  @for (item of datos; track $index) {
+  <app-estadisticas
+    [titulo]="item.nombre"
+    [dinero]="item.precio">
+  </app-estadisticas>
+}
+</div>
+<h2>Monitoreo</h2>
+<div class="tabla__container">
+  <app-tabla
+    [datos]="datosTabla"
+    [columnas]="['id', 'hora', 'tipo', 'precio', 'detalle']"
+  >   
+</app-tabla>
+</div>
+<div class="cierre__container">
+  <h2>Cierre Caja</h2>
+ <app-boton-agregar texto="Cerrar Caja" (click)="openModal()"></app-boton-agregar>
+
+@if (modalVisible) {
+  <app-modal-cierre (cerrar)="closeModal()"></app-modal-cierre>
+}
+

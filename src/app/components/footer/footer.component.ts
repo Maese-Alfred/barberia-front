@@ -1,16 +1,17 @@
-import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [NgIf],
+  standalone: true,                // ✅ importante si usas `imports` aquí
+  imports: [RouterLink, CommonModule],
   templateUrl: './footer.component.html',
-  styleUrl: './footer.component.scss'
+  styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
   menuAbierto = false;
+  toggleMenu() { this.menuAbierto = !this.menuAbierto; }
 
-  toggleMenu() {
-    this.menuAbierto = !this.menuAbierto;
-  }
+  closeMenu() { this.menuAbierto = false; }
 }

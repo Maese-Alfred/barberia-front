@@ -1,1 +1,14 @@
-<p>gastos works!</p>
+
+<div class="gastos__container">
+  <h2>Gastos</h2>
+  <app-tabla 
+  [datos]="datosGastos"
+  [columnas]="['id', 'hora', 'categoria', 'monto', 'descripcion']"
+  ></app-tabla>
+</div>
+<app-boton-agregar texto="Agregar Barbero" (click)="openModal()"></app-boton-agregar>
+
+@if (modalVisible) {
+  <app-modal-gastos (cerrar)="closeModal()"></app-modal-gastos>
+}
+

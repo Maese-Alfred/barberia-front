@@ -1,1 +1,27 @@
-<p>ventas works!</p>
+<div class="grid__container">
+  <!-- Catálogo -->
+  <div class="catalogo__container card">
+    <img src="assets/icons/services.svg" alt="Servicios" class="icono-card" />
+    <app-boton-agregar texto="Agregar Servicio"></app-boton-agregar>
+  </div>
+
+  <!-- Citas -->
+  <div class="citas__container card">
+    <img src="assets/icons/calendar.svg" alt="Agendar Cita" class="icono-card" />
+    <app-boton-agregar texto="Agendar Cita"></app-boton-agregar>
+  </div>
+
+  <!-- Ventas -->
+  <div class="ventas__container card">
+    <img src="assets/icons/sales.svg" alt="Registrar Venta" class="icono-card" />
+    <div class="form__preview">
+      [Formulario Nueva Venta]
+      ------------------------------------------------
+      - Tipo de venta: [Servicio | Producto | Ambos]
+      - Cliente: [input]
+      - Barbero asignado: [dropdown]
+      - Detalle: [inputs dinámicos según tipo]
+    </div>
+    <app-boton-agregar texto="Registrar Venta"></app-boton-agregar>
+  </div>
+</div>

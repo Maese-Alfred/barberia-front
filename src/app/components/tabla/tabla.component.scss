@@ -1,21 +1,48 @@
-.tabla{
-    width: 100%;
-    border-collapse: collapse;
+@use 'variables' as *;
+
+.tabla {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 4px; // espacio entre filas
+  overflow: hidden;
+  font-family: $font-family-base;
+  color: $text-color;
 }
+
+// Encabezado de la tabla
 .tabla__header {
-    background-color: #f2f2f2;
+  background: $golden-gradient;
+  color: $text-color;
+  text-align: center;
 }
-.tabla__cell {
-    padding: 12px 15px;
-    border: 1px solid #ddd;
-}
-.tabla__row:nth-child(even) {
-    background-color: #f9f9f9;
-}
-.tabla__row:hover {
-    background-color: #f1f1f1;
-}
+
 .tabla__header-cell {
-    font-weight: bold;
-    text-align: left;
+  font-weight: bold;
+  text-align: left;
+  border: none;
+}
+
+// Filas del body
+.tabla__row {
+  background-color: transparent;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+// Estilo zebra para mejorar lectura
+tbody .tabla__row:nth-child(even) {
+  background-color: $secondary-color;
+}
+
+// Hover solo en el body, no en el header
+tbody .tabla__row:hover {
+  background-color: $hover-color;
+  cursor: pointer;
+  transform: scale(1.01);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+// Celdas generales
+.tabla__cell {
+  padding: 12px 15px;
+  border: none; // quitamos todas las líneas de división
 }

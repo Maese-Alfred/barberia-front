@@ -1,1 +1,9 @@
-<p>inventario works!</p>
+<app-tabla 
+[columnas]="displayedColumns" 
+[datos]="productos"
+></app-tabla>
+<app-boton-agregar texto="Agregar Barbero" (click)="openModal()"></app-boton-agregar>
+
+@if (modalVisible) {
+  <app-modal-productos (cerrar)="closeModal()"></app-modal-productos>
+}

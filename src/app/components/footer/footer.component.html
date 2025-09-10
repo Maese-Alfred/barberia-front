@@ -1,65 +1,27 @@
 <footer>
   <div>
-    <nav class="footer__nav">
-      <ul>
-        <li>
-          <a routerLink="/">
-            <span class="material-symbols-outlined">home</span>
-            Inicio
-          </a>
-        </li>
-        <li>
-          <a routerLink="/ventas">
-            <span class="material-symbols-outlined">shopping_cart</span>
-            Ventas
-          </a>
-        </li>
-        <li></li>
-        <li>
-          <a routerLink="/servicios"
-            ><span class="material-symbols-outlined">design_services</span>
-            Servicios</a
-          >
-        </li>
-        <li>
-          <button (click)="toggleMenu()">
-            <span class="material-symbols-outlined">expand_more</span>
-            Más
-          </button>
-          <ul *ngIf="menuAbierto" class="dropdown-content">
-            <li>
-              <a routerLink="/barberos"
-                ><span class="material-symbols-outlined">content_cut</span>
-                Barberos</a
-              >
-            </li>
-            <li>
-              <a routerLink="/gastos"
-                ><span class="material-symbols-outlined">receipt_long</span>
-                Gastos</a
-              >
-            </li>
-            <li>
-              <a routerLink="/gestion-financiera"
-                ><span class="material-symbols-outlined">account_balance</span>
-                Gestión Financiera</a
-              >
-            </li>
-            <li>
-              <a routerLink="/inventario"
-                ><span class="material-symbols-outlined">inventory_2</span>
-                Inventario</a
-              >
-            </li>
-            <li>
-              <a routerLink="/reportes">
-                <span class="material-symbols-outlined">bar_chart</span>
-                Reportes
-              </a>
-            </li>
-          </ul>
-        </li>
+   <nav class="footer__nav">
+  <ul>
+    <li><a routerLink="/"> <span class="material-symbols-outlined">home</span> Inicio</a></li>
+    <li><a routerLink="/ventas"> <span class="material-symbols-outlined">shopping_cart</span> Ventas</a></li>
+    <li><a routerLink="/inventario"> <span class="material-symbols-outlined">inventory</span> Productos</a></li>
+    <li><a routerLink="/servicios"> <span class="material-symbols-outlined">design_services</span> Servicios</a></li>
+
+    <li>
+      <button (click)="toggleMenu()">
+        <span class="material-symbols-outlined">expand_more</span> Más
+      </button>
+      <ul class="dropdown-content">
+        @if (menuAbierto) {
+
+          <li><a routerLink="/barberos" (click)="closeMenu()"><span class="material-symbols-outlined">content_cut</span> Barberos</a></li>
+          <li><a routerLink="/gastos" (click)="closeMenu()"><span class="material-symbols-outlined">receipt_long</span> Gastos</a></li>
+          <li><a routerLink="/reportes" (click)="closeMenu()"><span class="material-symbols-outlined">assessment</span> Reportes</a></li>
+          <li><a routerLink="/gestion-financiera" (click)="closeMenu()"><span class="material-symbols-outlined">account_balance</span> Gestión Financiera</a></li>
+        }
       </ul>
-    </nav>
+    </li>
+  </ul>
+</nav>
   </div>
 </footer>

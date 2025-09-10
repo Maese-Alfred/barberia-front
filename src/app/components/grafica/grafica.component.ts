@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { Color, NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
 
 @Component({
   selector: 'app-grafica',
@@ -9,18 +9,36 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrls: ['./grafica.component.scss']
 })
 export class GraficaComponent {
-  view: [number, number] = [700, 400];  // tamaño [ancho, alto]
+  
+  view: [number, number] = [1000, 400];  // tamaño [ancho, alto]
 
   // Datos de ejemplo
-  data = [
-    { name: 'Enero', value: 65 },
-    { name: 'Febrero', value: 59 },
-    { name: 'Marzo', value: 80 },
-    { name: 'Abril', value: 81 },
-    { name: 'Mayo', value: 56 }
-  ];
+data = [
+  {
+    name: 'Ventas', // nombre de la serie
+    series: [
+      { name: 'Enero', value: 65 },
+      { name: 'Febrero', value: 59 },
+      { name: 'Marzo', value: 80 },
+      { name: 'Abril', value: 81 },
+      { name: 'Mayo', value: 56 }
+    ]
+  }
+];
 
   // Opciones
+ colorScheme: Color = {
+    name: 'goldenScheme',
+    selectable: true,
+    group: ScaleType.Ordinal,
+    domain: [
+      '#D4AF37', // dorado
+      '#FFD700', // amarillo dorado
+      '#B8860B', // oro oscuro
+      '#DAA520', // goldenrod
+      '#EEE8AA'  // dorado claro
+    ]
+  };
   showLegend = true;
   showLabels = true;
   animations = true;
@@ -30,4 +48,5 @@ export class GraficaComponent {
   showYAxisLabel = true;
   xAxisLabel = 'Mes';
   yAxisLabel = 'Ventas';
+
 }

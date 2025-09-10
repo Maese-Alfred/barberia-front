@@ -1,10 +1,11 @@
-<app-header></app-header>
 <div class="grafica__container">
 <app-grafica></app-grafica>
 </div>
 <div class="estadisticas__container">
-  <app-estadisticas></app-estadisticas>
-  <app-estadisticas></app-estadisticas>
-  <app-estadisticas></app-estadisticas>
+  @for (item of datos; track $index) {
+  <app-estadisticas
+    [titulo]="item.nombre"
+    [dinero]="item.precio">
+  </app-estadisticas>
+}
 </div>
-<app-footer></app-footer>

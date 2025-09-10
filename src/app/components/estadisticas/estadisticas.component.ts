@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-estadisticas',
@@ -7,8 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './estadisticas.component.scss'
 })
 export class EstadisticasComponent {
-  // esto se llama desde un servicio del backend
-  titulo = 'Estadísticas';
-  dinero = 120000;
+  @Input() titulo: string = '';
+  @Input() dinero: number = 0;
 
 }

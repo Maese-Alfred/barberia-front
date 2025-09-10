@@ -1,0 +1,25 @@
+@use 'variables' as *;
+
+  html, body {
+  height: 100%;
+  margin: 0;
+   
+}
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; // pantalla completa
+  background-color: $body-color;
+  color: $text-color;
+}
+
+.page__content {
+  flex: 1; // ocupa todo el espacio disponible
+  padding: 20px; // opcional: espacio interno para el contenido
+}
+
+footer {
+  margin-top: auto; // empuja el footer al fondo
+}
+

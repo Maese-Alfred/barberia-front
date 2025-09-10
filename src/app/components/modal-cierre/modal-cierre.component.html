@@ -1,0 +1,27 @@
+<div class="modal__overlay" (click)="onClose()">
+  <div class="modal__container" (click)="$event.stopPropagation()">
+    <div class="modal__header">
+      <h2>Agregar Gasto</h2>
+      <button class="modal__close" (click)="onClose()">✕</button>
+    </div>
+
+    <form class="modal__form">
+
+      <label for="base">Base Inicial:</label>
+      <input type="number" id="base" name="base" />
+
+      <label for="ganancia">Ganancia:</label>
+      <input type="number" id="ganancia" name="ganancia" />
+
+      <label for="total">Total Final:</label>
+      <input type="number" id="total" name="total" />
+
+      <div class="modal__actions">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="button" class="btn btn-secondary" (click)="onClose()">
+          Cerrar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

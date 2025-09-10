@@ -4,17 +4,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0.5rem 2rem;
     background: $golden-gradient;
     color: $text-color;
-    border-radius: $border-radius-base $border-radius-base 0 0;
+    border-bottom: 2px solid $text-color;
 }
 
 .fecha{
-    font-size: 0.6rem;
-    font-weight: 300;
+    font-size: 0.5rem;
+    font-weight: 200;
     border: 1px solid $text-color;
-    padding: 0.5rem 1rem;
+    padding: 0.1rem 1rem;
     border-radius: $border-radius-base;
     background-color: $secondary-color;
 }

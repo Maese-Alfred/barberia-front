@@ -1,19 +1,30 @@
-<form action="">
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre">
+<div class="modal__overlay" (click)="onClose()">
+  <div class="modal__container" (click)="$event.stopPropagation()">
+    <div class="modal__header">
+      <h2>Agregar Barbero</h2>
+      <button class="modal__close" (click)="onClose()">✕</button>
+    </div>
 
-  <label for="comision">Comisión:</label>
-  <input type="number" id="comision" name="comision">
+    <form class="modal__form">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" />
 
-  <label for="ventas">Ventas:</label>
-  <input type="number" id="ventas" name="ventas">
+      <label for="comision">Comisión:</label>
+      <input type="number" id="comision" name="comision" />
 
-  <label for="ganancias">Ganancias:</label>
-  <input type="number" id="ganancias" name="ganancias">
+      <label for="ventas">Ventas:</label>
+      <input type="number" id="ventas" name="ventas" />
 
-  <label for="especialidad">Especialidad:</label>
-  <input type="text" id="especialidad" name="especialidad">
+      <label for="ganancias">Ganancias:</label>
+      <input type="number" id="ganancias" name="ganancias" />
 
-  <button type="submit">Agregar Barbero</button>
-  <button (click)="onClose()">Cerrar</button>
-</form>
+      <label for="especialidad">Especialidad:</label>
+      <input type="text" id="especialidad" name="especialidad" />
+
+      <div class="modal__actions">
+        <button type="submit" class="btn btn-primary">Agregar</button>
+        <button type="button" class="btn btn-secondary" (click)="onClose()">Cerrar</button>
+      </div>
+    </form>
+  </div>
+</div>
